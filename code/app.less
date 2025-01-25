@@ -1,0 +1,98 @@
+// 解决modal组件浏览器版本问题导致报错问题
+.ant-modal div[aria-hidden="true"] {
+    display: none !important
+}
+
+// 限制弹窗的高度
+.ant-modal-body {
+    max-height: 80vh;
+    overflow: auto;
+    padding: 2px 0;
+}
+
+// 解决popconfirm最后一个字换行问题
+.ant-popconfirm-message-title {
+    width: max-content;
+}
+
+// form label左对齐
+.ant-form-item-label {
+    display: flex !important;
+    align-items: start !important;
+}
+
+// antd form表单标题上下居中
+.formLabelCenter {
+    .ant-col.ant-form-item-label {
+        display: flex !important;
+        align-items: center !important;
+    }
+}
+
+// 菜单字体
+.ant-menu-title-content {
+    font-size: 16px;
+}
+
+// 层级大于时间选择器弹框
+.ant-popover {
+    z-index: 1999 !important;
+}
+
+// 必填项 *符号影响label文字对齐
+.ant-form-item .ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    left: 30px;
+    position: fixed;
+}
+
+// 弹窗中的表单左侧margin
+.ant-modal-body {
+    .ant-form {
+        margin-left: 20px;
+    }
+}
+
+// 表格列宽调整
+.ant-table-resize-handle {
+    cursor: e-resize !important;
+
+    &:hover {
+        .ant-table-resize-handle-line {
+            opacity: 1;
+        }
+    }
+}
+
+//  
+.ant-select-dropdown {
+    .ant-space {
+        .ant-btn.ant-btn-text {
+            padding: 4px;
+        }
+    }
+}
+
+// 弹窗层级
+.ant-modal-root .ant-modal-wrap {
+    z-index: 1050 !important;
+}
+
+// /system/street的选项
+.system-street-a-tree-select-popup {
+    .ant-select-tree-list-holder-inner {
+        align-items: normal !important;
+    }
+}
+
+// 弹出默认隐藏 待计算判断是否显示
+.ant-popover {
+    display: none;
+    /* 默认隐藏 */
+    transition: opacity 0.2s ease-in-out;
+    /* 添加平滑过渡效果 */
+}
+
+.ant-popover.visible {
+    display: block;
+    opacity: 1;
+}
